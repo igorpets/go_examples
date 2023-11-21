@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"time"
 )
 
-func main2() {
+func test() {
+	fmt.Println(time.Now().Format("15:06"))
 	fmt.Println("My favorite number is", rand.Intn(10))
 	fmt.Printf("Now you have %g problems.\n", math.Sqrt(77))
 	fmt.Println(math.Pi)
@@ -16,6 +18,9 @@ func main2() {
 	n := 10000       // Количество прямоугольников
 	result := integrate(a, b, n)
 	fmt.Printf("Результат интегрирования: %f\n", result)
+
+	a1, b1 := swap("hello", "world")
+	fmt.Println(a1, b1)
 }
 
 func add(x int, y int) int {
@@ -34,4 +39,8 @@ func integrate(a, b float64, n int) float64 {
 		sum += f(x)
 	}
 	return sum * h
+}
+
+func swap(x, y string) (string, string) {
+	return y, x
 }

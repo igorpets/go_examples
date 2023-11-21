@@ -41,6 +41,7 @@ func (op *Operator) startHandlingCalls() {
 }
 
 func main() {
+	test()
 	callCenter := make(chan *Call)
 	operators := make([]Operator, 5)
 	for i := 0; i < 5; i++ {
@@ -68,6 +69,7 @@ func main() {
 	time.Sleep(15 * time.Second)
 
 	// Пример завершения работы программы: остановка обработки звонков и выход из приложения
+	fmt.Println("Final program!")
 	for i := 0; i < 5; i++ {
 		operators[i].QuitCh <- true
 	}
